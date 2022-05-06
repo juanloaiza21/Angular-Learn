@@ -5,8 +5,13 @@
 <div class="box" (scroll)="onScroll($event)">
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, fugit laudantium! Id quibusdam vitae eos dignissimos quidem officiis consequuntur voluptates ipsa dolorem tempore obcaecati hic esse sunt similique, doloribus quas. Lorem ipsum dolor sit amet consectetur adipis</p>
 </div>
-<input type="text" [value]="person.name" (keyup)="changeName($event)"/>
+<hr/>
+<h1>ngModel</h1>
+<input type="text" #nameInput="ngModel" required [(ngModel)]="person.name"/>
+<input type="number" min = "18" max = "99" #ageInput="ngModel" required [(ngModel)]="person.age"/>
 <p>Nombre {{person.name}}</p>
+<p>Valid: {{nameInput.valid}}</p>
+<p>Age: {{ageInput.valid}}</p>
 <hr/>
 <h1>Propiedades</h1>
 <button [disabled] = "bntDisabled">enviar </button>
